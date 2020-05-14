@@ -3,7 +3,7 @@ Terraform module used to setup a remote state of azure resources as azure storag
 Usage - 
 
 module "remote-storage" {
-  source              = "./remote-storage"
+  source              = "vkhade/remote-backend/azurerm"
   name_prefix         = "name_prefix"
   resource_group_name = "my_resource_group_name"
   location            = "location"
@@ -19,4 +19,3 @@ Module outputs -
 storage_account_name
 container_name
 primary_access_key
-

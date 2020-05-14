@@ -8,7 +8,7 @@ locals {
     namespace = "${var.name_prefix}${random_integer.ri.result}"
 }
 
-# Creates a azure storge account
+# Creates an azure storge account
 resource "azurerm_storage_account" "storage_account" {
   name = local.namespace
   resource_group_name = var.resource_group_name
@@ -25,7 +25,7 @@ resource "azurerm_storage_account" "storage_account" {
   tags = var.tags
 }
 
-# Creates a azure storage container
+# Creates an azure storage container
 resource "azurerm_storage_container" "storage_container" {
   name = "${local.namespace}-container"
   storage_account_name = azurerm_storage_account.storage_account.name
